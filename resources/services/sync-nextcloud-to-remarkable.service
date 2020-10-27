@@ -1,0 +1,13 @@
+# This file syncs nextcloud rclone remote with the devices
+# nextcloud => device
+
+[Unit]
+Description=Syncing nextcloud folder to remarkable
+Wants=sync-nextcloud-to-remarkable.timer
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/sync-nextcloud-to-remarkable.sh
+
+[Install]
+WantedBy=multi-user.target

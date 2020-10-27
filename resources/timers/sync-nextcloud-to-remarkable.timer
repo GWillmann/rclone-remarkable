@@ -1,0 +1,10 @@
+[Unit]
+Description=Syncs every 15 minutes the content of Nextcloud to the remarkable
+Requires=sync-nextcloud-to-remarkable.service
+
+[Timer]
+Unit=sync-nextcloud-to-remarkable.service
+OnCalendar=*:0/15
+
+[Install]
+WantedBy=timers.target
